@@ -251,4 +251,17 @@
     <origin xyz="0 0 ${bodylen/2+wheeldiam+0.1}" rpy="0 0 0"/>
   </joint>
 
+  <link name="eye">
+    <visual>
+      <geometry>
+        <cylinder/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="eye_joint" type="fixed">
+    <parent link="box"/>
+    <child link="eye"/>
+    <origin xyz="-0.04 0 0" rpy="${pi/2} ${pi} ${pi/2}"/>
+  </joint>
+
 </robot>

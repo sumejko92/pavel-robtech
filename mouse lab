@@ -1,0 +1,4 @@
+rostopic echo /griffin_powermate/events
+
+
+rosrun griffin_powermate griffin_powermate

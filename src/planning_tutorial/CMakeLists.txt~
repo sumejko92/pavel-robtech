@@ -190,5 +190,10 @@ include_directories(
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 
+include_directories(include ${catkin_INCLUDE_DIRS})
+
 add_executable(planning_tutorial src/planning_tutorial.cpp)
 target_link_libraries(planning_tutorial ${catkin_LIBRARIES})
+
+add_executable(planning_yaskawa src/planning_yaskawa.cpp)
+target_link_libraries(planning_yaskawa ${catkin_LIBRARIES})

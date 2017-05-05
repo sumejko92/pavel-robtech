@@ -1,0 +1,10 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: ""
+    relative_path: /home/arsovska/pavel-robtech/src/dual_manipulator_macro.xacro
+  SRDF:
+    relative_path: config/dual_arm.srdf
+  CONFIG:
+    author_name: Pavel
+    author_email: p_sumejko@yahoo.com
+    generated_timestamp: 1493991492

@@ -1,0 +1,74 @@
+# joint_limits.yaml allows the dynamics properties specified in the URDF to be overwritten or augmented as needed
+# Specific joint properties can be changed with the keys [max_position, min_position, max_velocity, max_acceleration]
+# Joint limits can be turned off with [has_velocity_limits, has_acceleration_limits]
+joint_limits:
+  leftjoint_b:
+    has_velocity_limits: true
+    max_velocity: 4.01425739
+    has_acceleration_limits: false
+    max_acceleration: 0
+  leftjoint_e:
+    has_velocity_limits: true
+    max_velocity: 3.4906586
+    has_acceleration_limits: false
+    max_acceleration: 0
+  leftjoint_l:
+    has_velocity_limits: true
+    max_velocity: 3.4906586
+    has_acceleration_limits: false
+    max_acceleration: 0
+  leftjoint_r:
+    has_velocity_limits: true
+    max_velocity: 3.4906586
+    has_acceleration_limits: false
+    max_acceleration: 0
+  leftjoint_s:
+    has_velocity_limits: true
+    max_velocity: 3.4906586
+    has_acceleration_limits: false
+    max_acceleration: 0
+  leftjoint_t:
+    has_velocity_limits: true
+    max_velocity: 6.10865255
+    has_acceleration_limits: false
+    max_acceleration: 0
+  leftjoint_u:
+    has_velocity_limits: true
+    max_velocity: 3.4906586
+    has_acceleration_limits: false
+    max_acceleration: 0
+  rightjoint_b:
+    has_velocity_limits: true
+    max_velocity: 4.01425739
+    has_acceleration_limits: false
+    max_acceleration: 0
+  rightjoint_e:
+    has_velocity_limits: true
+    max_velocity: 3.4906586
+    has_acceleration_limits: false
+    max_acceleration: 0
+  rightjoint_l:
+    has_velocity_limits: true
+    max_velocity: 3.4906586
+    has_acceleration_limits: false
+    max_acceleration: 0
+  rightjoint_r:
+    has_velocity_limits: true
+    max_velocity: 3.4906586
+    has_acceleration_limits: false
+    max_acceleration: 0
+  rightjoint_s:
+    has_velocity_limits: true
+    max_velocity: 3.4906586
+    has_acceleration_limits: false
+    max_acceleration: 0
+  rightjoint_t:
+    has_velocity_limits: true
+    max_velocity: 6.10865255
+    has_acceleration_limits: false
+    max_acceleration: 0
+  rightjoint_u:
+    has_velocity_limits: true
+    max_velocity: 3.4906586
+    has_acceleration_limits: false
+    max_acceleration: 0

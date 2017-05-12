@@ -6,19 +6,19 @@
   <arg name="robot_description" default="robot_description"/>
 
   <!-- Load universal robot description format (URDF) -->
-  <param if="$(arg load_robot_description)" name="$(arg robot_description)" command="$(find xacro)/xacro.py '/home/tudeng/pavel-robtech/src/dual_manipulator_macro.xacro'"/>
+  <param if="$(arg load_robot_description)" name="$(arg robot_description)" command="$(find xacro)/xacro.py '/home/tudeng/pavel-robtech/src/dual_manipulator_universal_macro.xacro'"/>
 
   <!-- The semantic description that corresponds to the URDF -->
-  <param name="$(arg robot_description)_semantic" textfile="$(find dual_manipulator_support)/config/dual_arm.srdf" />
+  <param name="$(arg robot_description)_semantic" textfile="$(find dual_manipulator_support_u5)/config/dual_arm_uni.srdf" />
   
   <!-- Load updated joint limits (override information from URDF) -->
   <group ns="$(arg robot_description)_planning">
-    <rosparam command="load" file="$(find dual_manipulator_support)/config/joint_limits.yaml"/>
+    <rosparam command="load" file="$(find dual_manipulator_support_u5)/config/joint_limits.yaml"/>
   </group>
 
   <!-- Load default settings for kinematics; these settings are overridden by settings in a node's namespace -->
   <group ns="$(arg robot_description)_kinematics">
-    <rosparam command="load" file="$(find dual_manipulator_support)/config/kinematics.yaml"/>
+    <rosparam command="load" file="$(find dual_manipulator_support_u5)/config/kinematics.yaml"/>
   </group>
   
 </launch>

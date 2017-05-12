@@ -10,13 +10,12 @@ controller_list:
       - leftjoint_t
   - name: fake_right_robot_arm_controller
     joints:
-      - rightjoint_s
-      - rightjoint_l
-      - rightjoint_e
-      - rightjoint_u
-      - rightjoint_r
-      - rightjoint_b
-      - rightjoint_t
+      - rightshoulder_pan_joint
+      - rightshoulder_lift_joint
+      - rightelbow_joint
+      - rightwrist_1_joint
+      - rightwrist_2_joint
+      - rightwrist_3_joint
   - name: fake_dual_robot_arms_controller
     joints:
       - leftjoint_s
@@ -26,10 +25,9 @@ controller_list:
       - leftjoint_r
       - leftjoint_b
       - leftjoint_t
-      - rightjoint_s
-      - rightjoint_l
-      - rightjoint_e
-      - rightjoint_u
-      - rightjoint_r
-      - rightjoint_b
-      - rightjoint_t
+      - rightshoulder_pan_joint
+      - rightshoulder_lift_joint
+      - rightelbow_joint
+      - rightwrist_1_joint
+      - rightwrist_2_joint
+      - rightwrist_3_joint

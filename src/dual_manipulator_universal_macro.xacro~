@@ -2,14 +2,10 @@
 
 <robot name="dual_arm" xmlns:xacro="http://ros.org/wiki/xacro">
 
-  <xacro:include filename="$(find motoman_sia5d_support)/urdf/sia5d_macro.xacro"/>
-  <xacro:motoman_sia5d prefix="left"/>
-  <xacro:motoman_sia5d prefix="right" />
-
   <xacro:property name="base_length" value="1" />
   <xacro:property name="base_width" value="0.5" />
-  <xacro:property name="base_height" value=".2" />
-  <xacro:property name="adjust_arm" value=".2" />
+  <xacro:property name="base_height" value=".3" />
+  <xacro:property name="bias_arm" value=".2" />
 
   <material name="blue">
     <color rgba="0 0 .8 1"/>
@@ -22,7 +18,7 @@
     </inertial>
   </xacro:macro>	
 
-  <link name="base_box">
+  <link name="base_link_torso">
     <visual>
       <geometry>
 	<box size="${base_length} ${base_width} ${base_height}"/>
@@ -38,16 +34,33 @@
     <xacro:default_inertial mass="10"/>
   </link>
 
+<!-- 
+  <joint name="base_link_joint" type="fixed">
+      <parent link="base_link"/>
+      <child link="base_link_torso"/>
+      <origin xyz="0 0 0" />
+  </joint> -->
+
+  <xacro:include filename="$(find motoman_sia5d_support)/urdf/sia5d_macro.xacro"/>
+  <xacro:motoman_sia5d prefix="left"/>
+
+  <!-- ur5 -->
+  <xacro:include filename="$(find ur_description)/urdf/ur5.urdf.xacro" />
+
+  <!-- arm -->
+  <xacro:ur5_robot prefix="right" joint_limited="false"/>
+
   <joint name="base_joint_left" type="fixed">
-      <parent link="base_box"/>
+      <parent link="base_link_torso"/>
       <child link="leftbase_link"/>
-      <origin xyz="-${base_length/2-adjust_arm} 0 ${base_height}" />
+      <origin xyz="-${base_length/2-bias_arm} 0 ${base_height}" />
   </joint>
 
   <joint name="base_joint_right" type="fixed">
-      <parent link="base_box"/>
+      <parent link="base_link_torso"/>
       <child link="rightbase_link"/>
-      <origin xyz="${base_length/2-adjust_arm} 0 ${base_height}" />
+      <origin xyz="${base_length/2-bias_arm} 0 ${base_height}" />
   </joint>
   
 </robot>
+

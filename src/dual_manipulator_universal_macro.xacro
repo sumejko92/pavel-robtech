@@ -1,10 +1,12 @@
 <?xml version="1.0"?>
 
-<robot name="dual_arm" xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="dual_arm_uni" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find ur_description)/urdf/ur5.urdf.xacro" />
+  <xacro:ur5_robot prefix="right" joint_limited="false"/>
 
   <xacro:include filename="$(find motoman_sia5d_support)/urdf/sia5d_macro.xacro"/>
   <xacro:motoman_sia5d prefix="left"/>
-  <xacro:motoman_sia5d prefix="right" />
 
   <xacro:property name="base_length" value="1" />
   <xacro:property name="base_width" value="0.5" />
@@ -38,6 +40,8 @@
     <xacro:default_inertial mass="10"/>
   </link>
 
+
+
   <joint name="base_joint_left" type="fixed">
       <parent link="base_box"/>
       <child link="leftbase_link"/>
@@ -51,3 +55,4 @@
   </joint>
   
 </robot>
+

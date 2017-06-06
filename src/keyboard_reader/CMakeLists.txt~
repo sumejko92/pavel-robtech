@@ -55,10 +55,7 @@ add_executable(keyboard_event_publisher src/keyboard_event_publisher.cpp)
 target_link_libraries(keyboard_event_publisher ${catkin_LIBRARIES} keyboard_reader)
 add_dependencies(keyboard_event_publisher keyboard_reader_gencpp ${catkin_EXPORTED_TARGETS})
 
-add_executable(move_bot src/move_bot.cpp)
-target_link_libraries(move_bot ${catkin_LIBRARIES})
+add_executable(teleop_bot src/teleop_bot.cpp)
+target_link_libraries(teleop_bot ${catkin_LIBRARIES})
 
-install(PROGRAMS
-  scripts/move_bot2.py 
-  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
+

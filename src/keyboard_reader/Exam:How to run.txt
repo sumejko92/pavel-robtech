@@ -1,0 +1,13 @@
+1) First thing I made the keyboard_reader package work by adding :
+sudo usermod -a -G root <user_name>
+2) Inside its src folder I created a new executable c++ script that contains a node that would subscribe to the keyboard topic from keyboard_event_publisher
+and publish messages on the topic /husky_velocity_controller/cmd_vel to create/stop movement of the husky robot. 
+As the node is subscribed to the topic keyboard it listens to its messages (when a button is pressed) and based
+on those messages it either updates (based on simple boolean/binary math) the linear.x item of the message to a value 1 for moving or 0 for stopping while in the loop in the main function the message is published at a certain rate.
+3) Set up Husky as given in the exam instructions (pretty straight forward)
+4) Commands needed to be run:
+	1.roscore
+	2.rosrun keyboard_reader keyboard_event_publisher 
+	3.rosrun keyboard_reader teleop_bot 
+	4.roslaunch husky_gazebo husky_playpen.launch
+
